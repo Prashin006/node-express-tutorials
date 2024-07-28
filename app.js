@@ -1,17 +1,25 @@
-const { log } = require('console')
-const os = require('os')
+const { readFile } = require('fs');
 
-// info about current user
-const user = os.userInfo()
-console.log(user);
-
-// method returns the system uptime in seconds
-console.log(`The System Uptime is ${os.uptime()} seconds`);
-
-const currentOs = {
-    name: os.type(),
-    release: os.release(),
-    totalMem: os.totalmem(),
-    freeMem: os.freemem(),
+const getText = (path) => {
+    return new Promise((resolve, reject) => {
+        readFile(path, 'utf8', (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(data);
+            }
+        });
+    });
 }
-console.log(currentOs);
+
+// getText('./content/first.txt').then(result => console.log(result)).catch(err => console.log(err));
+
+const start = async () => {
+    try {
+        const first = await getText('./content/first.txt');
+        console.log(first);
+    }catch(error){
+        console.log(error);
+    }
+}
+start();

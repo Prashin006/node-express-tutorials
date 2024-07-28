@@ -1,0 +1,19 @@
+{
+  "name": "fcc_node_express_8_16_47_john_smilga",
+  "version": "1.0.0",
+  "description": "This repository contains the code written in JavaScript for Node.js and Express.js which I learnt while doing Backend Development",
+  "main": "1-intro.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
